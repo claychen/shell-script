@@ -1,4 +1,7 @@
-
+#!/bin/bash
+<<Ref
+http://brooky.cc/2011/05/30/switch-between-severaldirectories/
+Ref
 cd_func ()
 {
 	local x2 the_new_dir adir index
@@ -6,6 +9,9 @@ cd_func ()
 
 	if [[ $1 ==  "--" ]]; then
 		dirs -v
+		return 0
+	elif [[ $1 == "-c" ]]; then
+		dirs -c
 		return 0
 	fi
 
