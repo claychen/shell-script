@@ -1,23 +1,11 @@
-#!/bin/bash
 
-#
-# Reference 
-
-<<Reference
-http://boxysystems.com/index.php/unixcygwin-tip-change-directory-like-a-command-line-commando/
-http://brooky.cc/2011/05/30/switch-between-severaldirectories/
-Reference
-
-# the function from petar marinov
 cd_func ()
 {
 	local x2 the_new_dir adir index
 	local -i cnt
+
 	if [[ $1 ==  "--" ]]; then
 		dirs -v
-		return 0
-	elif [[ $1 == "-c" ]]; then
-		dirs -c
 		return 0
 	fi
 
@@ -59,8 +47,8 @@ cd_func ()
 			cnt=cnt-1
 		fi
 	done
+
 	return 0
 }
 
 alias cd=cd_func
-
